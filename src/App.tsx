@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Box, Text, Flex, Heading, Progress, Stack } from "@chakra-ui/react";
+import { Box, Text, Flex, Heading, Progress } from "@chakra-ui/react";
 import moment from "moment";
 
 function App() {
