@@ -5,17 +5,21 @@ import { Box, Text, Flex, Heading, Progress } from "@chakra-ui/react";
 import moment from "moment";
 
 function App() {
-  const [daysRemaining, setdaysRemaining] = useState(0);
+  const [daysRemaining, setdaysRemaining] = useState(366);
   const [daysPercentageGone, setdaysPercentageGone] = useState(0);
 
   useEffect(() => {
-    setdaysRemaining(getRemainingDays());
+    setdaysRemaining(
+      daysRemaining > getRemainingDays()
+        ? daysRemaining - 1
+        : getRemainingDays()
+    );
     setdaysPercentageGone(
       daysPercentageGone < getPercentageOfDays()
         ? daysPercentageGone + 1
         : getPercentageOfDays()
     );
-  }, [daysPercentageGone]);
+  }, [daysPercentageGone, daysRemaining]);
 
   const getRemainingDays = () => {
     var now = moment(new Date()); //todays date
@@ -54,7 +58,7 @@ function App() {
           </Text>
 
           <Heading
-            fontSize={96}
+            fontSize={70}
             textAlign="center"
             marginTop={5}
             fontFamily="Inter"
