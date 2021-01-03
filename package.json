@@ -2,7 +2,7 @@
   "name": "year-countdown",
   "version": "0.1.0",
   "private": true,
-  "author": "ozorku",
+  "author": "Adavize Ozorku",
   "dependencies": {
     "@chakra-ui/react": "^1.0.4",
     "@emotion/react": "^11.1.4",
